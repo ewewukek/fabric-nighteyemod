@@ -13,28 +13,10 @@ import net.minecraft.client.render.BackgroundRenderer;
 public class BackgroundRendererMixin {
     @ModifyVariable(
         method = "render(Lnet/minecraft/client/render/Camera;FLnet/minecraft/client/world/ClientWorld;IF)V",
-        at = @At(value = "STORE", ordinal = 1),
-        index = 9
+        at = @At(value = "STORE"),
+        index = 8
     )
-    private static float getUnderwaterVisibility(float x) {
+    private static float lightLevel(float x) {
         return x + (1 - x) * NightEyeMod.currentStrength;
-    }
-
-    @ModifyVariable(
-        method = "render(Lnet/minecraft/client/render/Camera;FLnet/minecraft/client/world/ClientWorld;IF)V",
-        at = @At(value = "STORE", ordinal = 3),
-        index = 9
-    )
-    private static float getNightVisionStrength(float x) {
-        return x + (1 - x) * NightEyeMod.currentStrength;
-    }
-
-    @ModifyVariable(
-        method = "render(Lnet/minecraft/client/render/Camera;FLnet/minecraft/client/world/ClientWorld;IF)V",
-        at = @At(value = "STORE", ordinal = 4),
-        index = 9
-    )
-    private static float noEffect(float x) {
-        return NightEyeMod.currentStrength;
     }
 }

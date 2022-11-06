@@ -22,9 +22,9 @@
     "nighteyemod.mixins.json"
   ],
   "depends": {
-    "minecraft": "~1.19",
-    "java": ">=17",
-    "fabricloader": ">=0.14.9",
+    "minecraft": "1.17.x",
+    "java": ">=16",
+    "fabricloader": ">=0.11.3",
     "fabric-key-binding-api-v1": "*"
   }
 }

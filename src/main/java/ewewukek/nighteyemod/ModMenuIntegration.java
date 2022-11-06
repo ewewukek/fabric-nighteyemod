@@ -6,7 +6,8 @@ import com.terraformersmc.modmenu.api.ModMenuApi;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
-import net.minecraft.text.Text;
+import net.minecraft.text.LiteralText;
+import net.minecraft.text.TranslatableText;
 
 public class ModMenuIntegration implements ModMenuApi {
     @Override
@@ -14,13 +15,13 @@ public class ModMenuIntegration implements ModMenuApi {
         return parent -> {
             ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parent)
-                .setTitle(Text.translatable("nighteyemod.options.title"));
+                .setTitle(new TranslatableText("nighteyemod.options.title"));
             ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
-            ConfigCategory category = builder.getOrCreateCategory(Text.literal("category"));
+            ConfigCategory category = builder.getOrCreateCategory(new LiteralText("category"));
 
             category.addEntry(entryBuilder.startIntSlider(
-                Text.translatable("nighteyemod.options.strength"), Config.strength, 0, 100)
+                new TranslatableText("nighteyemod.options.strength"), Config.strength, 0, 100)
                 .setSaveConsumer(value -> Config.strength = value)
                 .setDefaultValue(Config.STRENGTH_DEFAULT)
                 .build());

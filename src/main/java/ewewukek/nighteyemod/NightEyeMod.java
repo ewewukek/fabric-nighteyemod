@@ -9,7 +9,7 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
-import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 
 public class NightEyeMod implements ClientModInitializer {
     public static KeyBinding toggleKey;
@@ -41,7 +41,7 @@ public class NightEyeMod implements ClientModInitializer {
                 if (!client.isInSingleplayer()) {
                     ClientPlayerEntity player = client.player;
                     if (player != null) {
-                        player.sendMessage(Text.translatable("nighteyemod.multiplayer_warning"));
+                        player.sendMessage(new TranslatableText("nighteyemod.multiplayer_warning"), false);
                     }
                 }
                 enabled = !enabled;

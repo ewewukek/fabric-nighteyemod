@@ -12,7 +12,7 @@ public class LightmapTextureManagerMixin {
     @ModifyVariable(
         method = "update(F)V",
         at = @At(value = "STORE"),
-        index = 8
+        index = 5
     )
     private float lightLevel(float x) {
         return x + (1 - x) * NightEyeMod.currentStrength;

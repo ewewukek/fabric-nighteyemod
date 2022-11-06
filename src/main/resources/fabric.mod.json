@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "nighteyemod",
+  "version": "${version}",
+  "name": "Night Eye Mod",
+  "description": "Togglable night eye power",
+  "icon": "assets/nighteyemod/icon.png",
+  "authors": [
+    "ewewukek"
+  ],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "ewewukek.nighteyemod.NightEyeMod"
+    ]
+  },
+  "mixins": [
+    "nighteyemod.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "~1.19",
+    "java": ">=17",
+    "fabricloader": ">=0.14.9",
+    "fabric-key-binding-api-v1": "*"
+  }
+}

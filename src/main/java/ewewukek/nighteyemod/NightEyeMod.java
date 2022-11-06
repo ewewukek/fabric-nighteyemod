@@ -6,8 +6,10 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
+import net.minecraft.text.Text;
 
 public class NightEyeMod implements ClientModInitializer {
     public static KeyBinding toggleKey;
@@ -28,7 +30,20 @@ public class NightEyeMod implements ClientModInitializer {
         ));
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            if (!client.isInSingleplayer()) {
+                if (enabled) {
+                    enabled = false;
+                    updateStrength();
+                }
+                return;
+            }
             while (toggleKey.wasPressed()) {
+                if (!client.isInSingleplayer()) {
+                    ClientPlayerEntity player = client.player;
+                    if (player != null) {
+                        player.sendMessage(Text.translatable("nighteyemod.multiplayer_warning"));
+                    }
+                }
                 enabled = !enabled;
                 updateStrength();
             }

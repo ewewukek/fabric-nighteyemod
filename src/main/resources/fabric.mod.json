@@ -13,6 +13,9 @@
   "entrypoints": {
     "client": [
       "ewewukek.nighteyemod.NightEyeMod"
+    ],
+    "modmenu": [
+      "ewewukek.nighteyemod.ModMenuIntegration"
     ]
   },
   "mixins": [

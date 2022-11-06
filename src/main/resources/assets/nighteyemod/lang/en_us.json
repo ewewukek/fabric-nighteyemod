@@ -1,3 +1,5 @@
 {
-  "key.nighteyemod.toggle": "Toggle Night Eye"
+  "key.nighteyemod.toggle": "Toggle Night Eye",
+  "nighteyemod.options.title": "Night Eye",
+  "nighteyemod.options.strength": "Night vision strength"
 }

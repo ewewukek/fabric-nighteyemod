@@ -4,7 +4,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
-import ewewukek.nighteyemod.NightEyeMod;
+import ewewukek.nighteyemod.NightEyeClientMod;
 import net.minecraft.client.render.LightmapTextureManager;
 
 @Mixin(LightmapTextureManager.class)
@@ -15,6 +15,6 @@ public class LightmapTextureManagerMixin {
         index = 8
     )
     private float lightLevel(float x) {
-        return x + (1 - x) * NightEyeMod.currentStrength;
+        return x + (1 - x) * NightEyeClientMod.currentStrength;
     }
 }

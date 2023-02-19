@@ -4,7 +4,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
-import ewewukek.nighteyemod.NightEyeMod;
+import ewewukek.nighteyemod.NightEyeClientMod;
 import net.minecraft.client.render.BackgroundRenderer;
 
 // sadly @At does not support multiple ordinal values
@@ -17,7 +17,7 @@ public class BackgroundRendererMixin {
         index = 9
     )
     private static float getUnderwaterVisibility(float x) {
-        return x + (1 - x) * NightEyeMod.currentStrength;
+        return x + (1 - x) * NightEyeClientMod.currentStrength;
     }
 
     @ModifyVariable(
@@ -26,7 +26,7 @@ public class BackgroundRendererMixin {
         index = 9
     )
     private static float getNightVisionStrength(float x) {
-        return x + (1 - x) * NightEyeMod.currentStrength;
+        return x + (1 - x) * NightEyeClientMod.currentStrength;
     }
 
     @ModifyVariable(
@@ -35,6 +35,6 @@ public class BackgroundRendererMixin {
         index = 9
     )
     private static float noEffect(float x) {
-        return NightEyeMod.currentStrength;
+        return NightEyeClientMod.currentStrength;
     }
 }

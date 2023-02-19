@@ -27,7 +27,7 @@ public class ModMenuIntegration implements ModMenuApi {
 
             builder.setSavingRunnable(() -> {
                 Config.save();
-                NightEyeMod.updateStrength();
+                NightEyeClientMod.updateStrength();
             });
 
             return builder.build();

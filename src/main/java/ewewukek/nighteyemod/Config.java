@@ -13,7 +13,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Config {
-    private static final Logger logger = LogManager.getLogger(NightEyeMod.class);
+    private static final Logger logger = LogManager.getLogger(NightEyeClientMod.class);
     public static Path path;
 
     public static int strength;

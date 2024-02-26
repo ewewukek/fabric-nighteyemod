@@ -9,6 +9,10 @@ import net.minecraft.client.render.BackgroundRenderer;
 
 // sadly @At does not support multiple ordinal values
 
+// have to specify exact ordinals
+// because not all 'fstore 9' instructions
+// belong to targeted variable
+
 @Mixin(BackgroundRenderer.class)
 public class BackgroundRendererMixin {
     @ModifyVariable(
@@ -35,6 +39,6 @@ public class BackgroundRendererMixin {
         index = 9
     )
     private static float noEffect(float x) {
-        return NightEyeClientMod.currentStrength;
+        return x + (1 - x) * NightEyeClientMod.currentStrength;
     }
 }

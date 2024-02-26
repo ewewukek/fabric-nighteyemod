@@ -7,6 +7,9 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import ewewukek.nighteyemod.NightEyeClientMod;
 import net.minecraft.client.render.LightmapTextureManager;
 
+// apply to all 'fstore 8' instructions
+// because they all belong to same variable
+
 @Mixin(LightmapTextureManager.class)
 public class LightmapTextureManagerMixin {
     @ModifyVariable(

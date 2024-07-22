@@ -55,7 +55,7 @@ public class NightEyeClientMod implements ClientModInitializer {
             updateStrength();
         });
 
-        ClientPlayNetworking.registerGlobalReceiver(NightEyeMod.ALLOW_PACKET_ID, (client, handler, buf, responseSender) -> {
+        ClientPlayNetworking.registerGlobalReceiver(AllowPacket.ID, (payload, context) -> {
             allowed = true;
         });
     }

@@ -1,6 +1,6 @@
 ## Night Eye Mod
 
-Simple night vision. [Download from CurseForge](https://www.curseforge.com/minecraft/mc-mods/night-eye-fabric/files/all)
+Simple night vision. [Download from CurseForge](https://www.curseforge.com/minecraft/mc-mods/night-eye-fabric/files/all) [Download from modrinth](https://modrinth.com/mod/night-eye-fabric/versions)
 
 Requires [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config) and [Mod Menu](https://www.curseforge.com/minecraft/mc-mods/modmenu).
 
